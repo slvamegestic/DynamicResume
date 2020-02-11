@@ -101,98 +101,43 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       </div><br>
 
     <!-- End Left Column -->
-    </div>
-
-    <!-- Right Column -->
+</div>
     <div class="w3-twothird">
-    
-        <div class="w3-container w3-card w3-white w3-margin-bottom">
-              <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience 
-                  <a href="addwork.php">
-                    <i class="fa fa-plus fa-fw w3-right w3-large w3-text-teal"></i>
-                  </a>
-                  
-             </h2>
-              <?php   
-                    $sql= "SELECT * FROM `experience`";
-                    
-                    $result = mysqli_query($conn, $sql);
+    <?php
+      if(isset($_POST['addedu']))
+      {
+          $name =$_POST['c-name'];
+          $time=$_POST['du-tion'];
+          $about=$_POST['dis-tion'];
 
-                    while($row = mysqli_fetch_assoc($result)) {
-              ?>
-                <div class="w3-container">
-                <h5 class="w3-opacity"><b><?php echo $row["profile_name"];?></b>
-                <a href="index.php?del=<?php echo $row["id"];?>">
-                  <i class="fa fa-remove fa-fw w3-right w3-large w3-text-teal"></i>
-              </a>
-                </h5>
-                <h6 class="w3-text-teal"> <span class="w3-tag w3-teal w3-round"><?php echo $row["duration"];?></span>
-                  
-                </h6>
-                <h5 class="w3-opacity"><b><?php echo $row["description"];?></b>
-                <hr>
-              </div>
-         <?php }
-      
-          if(isset($_GET['del']))
-          {
-             $del_id= $_GET['del'];
-             $sql="DELETE FROM `experience` WHERE id=$del_id";
-             if(mysqli_query($conn, $sql)){
-              echo "<script>window.location='index.php'; </script>";
-          }
-          }
-  
-       ?>
-     </div>
-
-
-      <div class="w3-container w3-card w3-white">
-     
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education
-                  <a href="addedu.php">
-                    <i class="fa fa-plus fa-fw w3-right w3-large w3-text-teal"></i>
-                  </a>
-        </h2>
-                  
-        <div class="w3-container">
-
-        <?php   
-                    $sql= "SELECT * FROM `education`";
-                    
-                    $result = mysqli_query($conn, $sql);
-
-                    while($row = mysqli_fetch_assoc($result)) {
-              ?>
-                <div class="w3-container">
-                <h5 class="w3-opacity"><b><?php echo $row["course"];?></b>
-                <a href="index.php?del=<?php echo $row["id"];?>">
-                  <i class="fa fa-remove fa-fw w3-right w3-large w3-text-teal"></i>
-              </a>
-                </h5>
-                <h6 class="w3-text-teal"> <span class="w3-tag w3-teal w3-round"><?php echo $row["duration"];?></span>
-              
-                </h6>
-                <p><?php echo $row["description"];?></p>
-                <hr>
-              </div>
-              <?php }
-
-                          if(isset($_GET['del']))
-                          {
-                            $del_id= $_GET['del'];
-                            $sql="DELETE FROM `education` WHERE id=$del_id";
-                            if(mysqli_query($conn, $sql)){
-                              echo "<script>window.location='index.php'; </script>";
-                          }
-                          }
-              ?>
+          $sql="INSERT INTO `education` (`id`, `course`, `duration`, `description`) VALUES (NULL, '$name', '$time','$about')";
+          if(mysqli_query($conn, $sql)){
+            echo"<script>window.location='index.php'; </script>";
+        }
+      }
+    ?>
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Add Your Education</h2>
+            <form class="w3-container w3-card-4" action="" method='post'>
+            
+               
+                <p>      
+                  <label class="w3-text-blue"><b>course</b></label>
+                  <input class="w3-input w3-border" name="c-name" type="text">
+                </p>
+                <p>      
+                  <label class="w3-text-blue"><b>Duration</b></label>
+                  <input class="w3-input w3-border" name="du-tion" type="text">
+                </p>
+                <p>      
+                  <label class="w3-text-blue"><b>about your course</b></label>
+                  <input class="w3-input w3-border" name="dis-tion" type="text">
+                </p>
+                <p>      
+                  <button class="w3-btn w3-blue" name="addedu">Add</button>
+                </p>
+            </form>
        </div>
-
-
-
-
-    <!-- End Right Column -->
     </div>
     
   <!-- End Grid -->

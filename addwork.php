@@ -104,7 +104,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </div>
 
     <!-- Right Column -->
+    
     <div class="w3-twothird">
+  
     <?php
       if(isset($_POST['addwork']))
       {
@@ -112,7 +114,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           $duration=$_POST['du-tion'];
           $discription=$_POST['dis-tion'];
 
-          $sql="INSERT INTO `experience` (`id`, `profile_name`, `duration`, `status`, `description`) VALUES (NULL, '$profile_name', '$duration','$description')";
+          $sql="INSERT INTO `experience` (`id`, `profile_name`, `duration`, `description`) VALUES (NULL, '$name', '$duration','$discription')";
           if(mysqli_query($conn, $sql)){
             echo"<script>window.location='index.php'; </script>";
         }
@@ -140,7 +142,29 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
                 </p>
             </form>
        </div>
+       <div class="w3-container w3-card w3-white w3-margin-bottom">
+              <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience <a href="addwork.php">
+          <i class="fa fa-plus fa-fw w3-right w3-large w3-text-teal"></i></a></h2>
+              <?php   
+                    $sql= "SELECT * FROM `experience`";
+                    
+                    $result = mysqli_query($conn, $sql);
 
+                    while($row = mysqli_fetch_assoc($result)) {
+              ?>
+              <div class="w3-container">
+                <h5 class="w3-opacity"><b><?php echo $row["profile_name"];?></b></h5>
+                <h6 class="w3-text-teal"> <span class="w3-tag w3-teal w3-round"><?php echo $row["duration"];?></span>
+                    <?php if($row['status'])
+                    echo '- <span class="w3-tag w3-teal w3-round"> Current </span>';
+                    ?>
+                </h6>
+                <h5 class="w3-opacity"><b><?php echo $row["description"];?></b></h5>
+                <hr>
+              </div>
+         <?php }
+          ?>
+        </div>
 
     <!-- End Right Column -->
     </div>

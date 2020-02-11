@@ -40,20 +40,19 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
           <hr>
           <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-         <?php   
+    <?php   
         $sql= "SELECT * FROM `skills`";
 
         $result = mysqli_query($conn, $sql);
 
         while($row = mysqli_fetch_assoc($result)) {
-          ?>
+    ?>
           <p><?php echo $row["skillname"];?></p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $row["skilllevel"]; ?>%"><?php echo $row["skilllevel"]; ?>%</div>
           </div>
-     <?php }?>
+    <?php }?>
      
-<p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
 <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
 
 <?php   
