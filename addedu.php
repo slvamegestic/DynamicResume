@@ -28,13 +28,13 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           </div>
         </div>
         <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Designer</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>india,coimbatore</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>ex@mail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-orange"></i>Designer</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-orange"></i>india,coimbatore</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-orange"></i>sselvakkumar12@gmail.com</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-orange"></i>9159266344</p>
           <hr>
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b><a href="add.php">
-          <i class="fa fa-plus fa-fw w3-right w3-large w3-text-teal"></i></a></p>
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-orange"></i>Skills</b><a href="add.php">
+          <i class="fa fa-plus fa-fw w3-right w3-large w3-text-orange"></i></a></p>
          <?php   
         $sql= "SELECT * FROM `skills`";
         
@@ -45,14 +45,14 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             <p>
               <?php echo $row["skillname"];?> 
                 <a href="edit.php?edit=<?php echo $row["id"];?>">
-                  <i class="fa fa-edit fa-fw w3-right w3-large w3-text-teal"></i>
+                  <i class="fa fa-edit fa-fw w3-right w3-large w3-text-orange"></i>
                 </a>
                 <a href="index.php?del=<?php echo $row["id"];?>">
-                  <i class="fa fa-remove fa-fw w3-right w3-large w3-text-teal"></i>
+                  <i class="fa fa-remove fa-fw w3-right w3-large w3-text-orange"></i>
                 </a>
             </p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $row["skilllevel"]; ?>%"><?php echo $row["skilllevel"]; ?>%</div>
+             <div class="w3-container w3-center w3-round-xlarge w3-orange" style="width:<?php echo $row["skilllevel"]; ?>%"><?php echo $row["skilllevel"]; ?>%</div>
           </div>
      <?php }
         if(isset($_GET['del']))
@@ -66,8 +66,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
      ?>
  
- <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b><a href="langadd.php">
-          <i class="fa fa-plus fa-fw w3-right w3-large w3-text-teal"></i></a></p>
+ <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-orange"></i>Languages</b><a href="langadd.php">
+          <i class="fa fa-plus fa-fw w3-right w3-large w3-text-orange"></i></a></p>
  <?php   
         $sql= "SELECT * FROM `language`";
         
@@ -77,14 +77,14 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   ?>
           <p><?php echo $row["name"];?>
               <a href="langedit.php?edit=<?php echo $row["id"];?>">
-                 <i class="fa fa-edit fa-fw w3-right w3-large w3-text-teal"></i>
+                 <i class="fa fa-edit fa-fw w3-right w3-large w3-text-orange"></i>
               </a>
               <a href="index.php?del=<?php echo $row["id"];?>">
-                  <i class="fa fa-remove fa-fw w3-right w3-large w3-text-teal"></i>
+                  <i class="fa fa-remove fa-fw w3-right w3-large w3-text-orange"></i>
               </a>
           </p>   
           <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:<?php echo $row["level"];?>%"></div>
+            <div class="w3-round-xlarge w3-orange" style="height:24px;width:<?php echo $row["level"];?>%"></div>
           </div>
     <?php    }
          if(isset($_GET['del']))
@@ -110,31 +110,37 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           $time=$_POST['du-tion'];
           $about=$_POST['dis-tion'];
 
+          if($name == "" || $time == "" || $about== ""){
+            $nameErr = "* All Information is required";
+            }
+           else{
           $sql="INSERT INTO `education` (`id`, `course`, `duration`, `description`) VALUES (NULL, '$name', '$time','$about')";
           if(mysqli_query($conn, $sql)){
             echo"<script>window.location='index.php'; </script>";
         }
       }
+      }
     ?>
       <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Add Your Education</h2>
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-orange"></i>Add Your Education</h2>
             <form class="w3-container w3-card-4" action="" method='post'>
             
                
                 <p>      
-                  <label class="w3-text-blue"><b>course</b></label>
+                  <label class="w3-text-green"><b>course</b></label>
                   <input class="w3-input w3-border" name="c-name" type="text">
                 </p>
                 <p>      
-                  <label class="w3-text-blue"><b>Duration</b></label>
+                  <label class="w3-text-green"><b>Duration</b></label>
                   <input class="w3-input w3-border" name="du-tion" type="text">
                 </p>
                 <p>      
-                  <label class="w3-text-blue"><b>about your course</b></label>
+                  <label class="w3-text-green"><b>about your course</b></label>
                   <input class="w3-input w3-border" name="dis-tion" type="text">
                 </p>
+                <span class="error" style="color:red;"> <?php echo $nameErr;?></span>
                 <p>      
-                  <button class="w3-btn w3-blue" name="addedu">Add</button>
+                  <button class="w3-btn w3-sand" name="addedu">Add</button>
                 </p>
             </form>
        </div>
@@ -146,7 +152,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <!-- End Page Container -->
 </div>
 
-<footer class="w3-container w3-teal w3-center w3-margin-top">
+<footer class="w3-container w3-orange w3-center w3-margin-top">
   <p>Find me on social media.</p>
   <i class="fa fa-facebook-official w3-hover-opacity"></i>
   <i class="fa fa-instagram w3-hover-opacity"></i>

@@ -28,13 +28,13 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           </div>
         </div>
         <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Designer</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>india,coimbatore</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>ex@mail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-orange"></i>Designer</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-orange"></i>india,coimbatore</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-orange"></i>ex@mail.com</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-orange"></i>1224435534</p>
           <hr>
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b><a href="add.php">
-          <i class="fa fa-plus fa-fw w3-right w3-large w3-text-teal"></i></a></p>
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-orange"></i>Skills</b><a href="add.php">
+          <i class="fa fa-plus fa-fw w3-right w3-large w3-text-orange"></i></a></p>
          <?php   
         $sql= "SELECT * FROM `skills`";
         
@@ -45,14 +45,14 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             <p>
               <?php echo $row["skillname"];?> 
                 <a href="edit.php?edit=<?php echo $row["id"];?>">
-                  <i class="fa fa-edit fa-fw w3-right w3-large w3-text-teal"></i>
+                  <i class="fa fa-edit fa-fw w3-right w3-large w3-text-orange"></i>
                 </a>
                 <a href="index.php?del=<?php echo $row["id"];?>">
-                  <i class="fa fa-remove fa-fw w3-right w3-large w3-text-teal"></i>
+                  <i class="fa fa-remove fa-fw w3-right w3-large w3-text-orange"></i>
                 </a>
             </p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $row["skilllevel"]; ?>%"><?php echo $row["skilllevel"]; ?>%</div>
+             <div class="w3-container w3-center w3-round-xlarge w3-orange" style="text-align:center;height:24px;width:<?php echo $row["skilllevel"]; ?>%"><?php echo $row["skilllevel"]; ?>%</div>
           </div>
      <?php }
         if(isset($_GET['del']))
@@ -66,8 +66,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
      ?>
  
- <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b><a href="langadd.php">
-          <i class="fa fa-plus fa-fw w3-right w3-large w3-text-teal"></i></a></p>
+ <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-orange"></i>Languages</b><a href="langadd.php">
+          <i class="fa fa-plus fa-fw w3-right w3-large w3-text-orange"></i></a></p>
  <?php   
         $sql= "SELECT * FROM `language`";
         
@@ -77,14 +77,14 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   ?>
           <p><?php echo $row["name"];?>
               <a href="langedit.php?edit=<?php echo $row["id"];?>">
-                 <i class="fa fa-edit fa-fw w3-right w3-large w3-text-teal"></i>
+                 <i class="fa fa-edit fa-fw w3-right w3-large w3-text-orange"></i>
               </a>
               <a href="index.php?del=<?php echo $row["id"];?>">
-                  <i class="fa fa-remove fa-fw w3-right w3-large w3-text-teal"></i>
+                  <i class="fa fa-remove fa-fw w3-right w3-large w3-text-orange"></i>
               </a>
           </p>   
           <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:<?php echo $row["level"];?>%"></div>
+            <div class="w3-container w3-center w3-round-xlarge w3-orange" style="text-align:center;height:24px;width:<?php echo $row["level"];?>%"><?php echo $row["level"];?>%</div>
           </div>
     <?php    }
          if(isset($_GET['del']))
@@ -107,9 +107,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <div class="w3-twothird">
     
         <div class="w3-container w3-card w3-white w3-margin-bottom">
-              <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience 
+              <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-orange"></i>Work Experience 
                   <a href="addwork.php">
-                    <i class="fa fa-plus fa-fw w3-right w3-large w3-text-teal"></i>
+                    <i class="fa fa-plus fa-fw w3-right w3-large w3-text-orange"></i>
                   </a>
                   
              </h2>
@@ -123,10 +123,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
                 <div class="w3-container">
                 <h5 class="w3-opacity"><b><?php echo $row["profile_name"];?></b>
                 <a href="index.php?del=<?php echo $row["id"];?>">
-                  <i class="fa fa-remove fa-fw w3-right w3-large w3-text-teal"></i>
+                  <i class="fa fa-remove fa-fw w3-right w3-large w3-text-orange"></i>
               </a>
                 </h5>
-                <h6 class="w3-text-teal"> <span class="w3-tag w3-teal w3-round"><?php echo $row["duration"];?></span>
+                <h6 class="w3-text-orange"> <span class="w3-tag w3-orange w3-round"><?php echo $row["duration"];?></span>
                   
                 </h6>
                 <h5 class="w3-opacity"><b><?php echo $row["description"];?></b>
@@ -149,9 +149,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
       <div class="w3-container w3-card w3-white">
      
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-orange"></i>Education
                   <a href="addedu.php">
-                    <i class="fa fa-plus fa-fw w3-right w3-large w3-text-teal"></i>
+                    <i class="fa fa-plus fa-fw w3-right w3-large w3-text-orange"></i>
                   </a>
         </h2>
                   
@@ -167,10 +167,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
                 <div class="w3-container">
                 <h5 class="w3-opacity"><b><?php echo $row["course"];?></b>
                 <a href="index.php?del=<?php echo $row["id"];?>">
-                  <i class="fa fa-remove fa-fw w3-right w3-large w3-text-teal"></i>
+                  <i class="fa fa-remove fa-fw w3-right w3-large w3-text-orange"></i>
               </a>
                 </h5>
-                <h6 class="w3-text-teal"> <span class="w3-tag w3-teal w3-round"><?php echo $row["duration"];?></span>
+                <h6 class="w3-text-orange"> <span class="w3-tag w3-orange w3-round"><?php echo $row["duration"];?></span>
               
                 </h6>
                 <p><?php echo $row["description"];?></p>
@@ -201,7 +201,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <!-- End Page Container -->
 </div>
 
-<footer class="w3-container w3-teal w3-center w3-margin-top">
+<footer class="w3-container w3-orange w3-center w3-margin-top">
   <p>Find me on social media.</p>
   <i class="fa fa-facebook-official w3-hover-opacity"></i>
   <i class="fa fa-instagram w3-hover-opacity"></i>
