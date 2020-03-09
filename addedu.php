@@ -102,7 +102,6 @@
           $name =$_POST['c-name'];
           $time=$_POST['du-tion'];
           $about=$_POST['dis-tion'];
-
           if($name == "" || $time == "" || $about== ""){
             $nameErr = "* All Information is required";
             }
